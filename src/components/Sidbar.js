@@ -6,8 +6,24 @@ import MoreVertIcon from '@material-ui/icons/MoreVert'
 import './css/sidbar.css'
 import {SearchOutlined} from "@material-ui/icons";
 import SidebarChat from "./SidebarChat";
+import db from '../config/firebase'
 
 class Sidbar extends React.Component {
+    state = {
+        rooms: []
+    }
+
+    componentDidMount() {
+        db.collection('rooms').onSnapshot(snapshot => {
+            this.setState({rooms: snapshot.docs.map(doc => (
+                    {
+                        id: doc.id,
+                        data:doc.data()
+                    }
+                ))})
+        })
+    }
+
     render() {
         return(
             <div className={'sidebar'}>
@@ -33,7 +49,10 @@ class Sidbar extends React.Component {
                     </div>
                 </div>
                 <div className="sidebar-chats">
-                    <SidebarChat addNewChat/>
+                    <SidebarChat addNewChat />
+                    {this.state.rooms.map(room => {
+                        return <SidebarChat id={room.id} key={room.id} name={room.data.name} />
+                    })}
                 </div>
             </div>
         )

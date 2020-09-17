@@ -21,8 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e0271654-9d54-44ff-8b6a-3b5f06f54b29" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Sidbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SidebarChat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SidebarChat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/css/sidbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/sidbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/firebase.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +65,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -71,7 +77,8 @@
       <option name="presentableId" value="Default" />
       <updated>1600258062955</updated>
       <workItem from="1600258065033" duration="1625000" />
-      <workItem from="1600266941632" duration="16327000" />
+      <workItem from="1600266941632" duration="16612000" />
+      <workItem from="1600292428406" duration="11994000" />
     </task>
     <servers />
   </component>
@@ -88,15 +95,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1600273872847">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600273872847" />
-    <state x="0" y="9" key="SettingsEditor" timestamp="1600272830548">
+    <state x="93" y="18" key="SettingsEditor" timestamp="1600298214917">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="0" y="9" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1600272830548" />
+    <state x="93" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1600298214917" />
   </component>
 </project>
