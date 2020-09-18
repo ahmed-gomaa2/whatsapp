@@ -25,3 +25,31 @@ a {
     color: black;
 }
 
+.creator-form{
+    display: flex;
+    max-height: 30px;
+    overflow: hidden;
+}
+
+.creator-form > input {
+    border: none;
+    background: #DCFBC6;
+    height: 30px;
+
+}
+
+.creator-form > input:focus {
+    outline: none;
+}
+
+.creator-form > button {
+    flex: 1;
+    background: white;
+    border: none;
+    cursor: pointer;
+}
+
+.creator-form > button:hover {
+    background: black;
+    color: white;
+}

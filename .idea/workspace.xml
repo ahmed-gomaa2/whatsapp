@@ -21,11 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e0271654-9d54-44ff-8b6a-3b5f06f54b29" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Sidbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SidebarChat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SidebarChat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/chat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/sidebarChat.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/sidebarChat.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +77,8 @@
       <workItem from="1600338685960" duration="186000" />
       <workItem from="1600356608132" duration="4536000" />
       <workItem from="1600381926259" duration="11703000" />
-      <workItem from="1600426024830" duration="14290000" />
+      <workItem from="1600426024830" duration="15439000" />
+      <workItem from="1600456076595" duration="5444000" />
     </task>
     <servers />
   </component>

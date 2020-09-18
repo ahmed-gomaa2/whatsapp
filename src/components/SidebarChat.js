@@ -50,7 +50,8 @@ class SidebarChat extends React.Component {
         e.preventDefault()
         this.props.createRoom(this.state.room, this.props.userID)
         console.log(this.state.room)
-        this.setState({room:''})
+        this.setState({room:'', open:false})
+
     }
 
     renderForm = () => {
@@ -59,9 +60,9 @@ class SidebarChat extends React.Component {
                 <h2>Add new Chat</h2>
             </div>
         }else {
-            return <form onSubmit={this.addChatRoom}>
+            return <form className={'creator-form'} onSubmit={this.addChatRoom}>
                      <input value={this.state.room} type="text" onChange={this.handleChange}/>
-                     <button>Add Room</button>
+                     <button>Add</button>
                   </form>
         }
     }
@@ -77,7 +78,7 @@ class SidebarChat extends React.Component {
                     <Avatar src={`https://avatars.dicebear.com/api/human/${this.state.seed}.svg`} />
                     <div className="sidebarChat-info">
                         <h2>{this.props.name}</h2>
-                        <p>{this.state.messages ? this.state.messages[0][0].message: ''}</p>
+                        <p>{this.state.messages ? this.state.messages[0][0]?.message : ''}</p>
                     </div>
                 </div>
             </Link>
