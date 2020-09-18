@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/sidebarChat.css'
 import {Avatar} from "@material-ui/core";
-import db from "../config/firebase";
+import firebase from "../config/firebase";
 import {Link} from "react-router-dom";
 import {connect} from 'react-redux'
 import {compose} from "redux";
@@ -14,16 +14,32 @@ class SidebarChat extends React.Component {
     state = {
         seed: '',
         room: '',
-        open:false
+        open:false,
+        messages:''
     }
 
     handleClick = () => {
         this.setState({open:!this.state.open})
     }
 
-
     componentDidMount() {
         this.setState({seed: Math.floor(Math.random() * 5000)})
+        const db = firebase.firestore()
+        if(this.props.id) {
+            db.collection('rooms')
+                .doc(this.props.id)
+                .collection('messages')
+                .orderBy('timestamp', 'desc')
+                .onSnapshot(snapshot => {
+                    this.setState({
+                        messages: [snapshot.docs.map(doc => {
+                            return doc.data()
+                        })]
+                    })
+                })
+        }
+
+
     }
 
     handleChange = (e) => {
@@ -32,7 +48,7 @@ class SidebarChat extends React.Component {
 
     addChatRoom = (e) => {
         e.preventDefault()
-        this.props.createRoom(this.state.room)
+        this.props.createRoom(this.state.room, this.props.userID)
         console.log(this.state.room)
         this.setState({room:''})
     }
@@ -52,13 +68,16 @@ class SidebarChat extends React.Component {
 
 
     render() {
+        if (this.state.messages) {
+            console.log(this.state)
+        }
         return !this.props.addNewChat ?  (
             <Link to={`/rooms/${this.props.id}`} >
                 <div className={'sidebarChat'}>
                     <Avatar src={`https://avatars.dicebear.com/api/human/${this.state.seed}.svg`} />
                     <div className="sidebarChat-info">
                         <h2>{this.props.name}</h2>
-                        <p>Last message</p>
+                        <p>{this.state.messages ? this.state.messages[0][0].message: ''}</p>
                     </div>
                 </div>
             </Link>
@@ -68,10 +87,11 @@ class SidebarChat extends React.Component {
     }
 }
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         createRoom: () => dispatch(actions.createRoom())
-//     }
-// }
+const mapStateToProps = state => {
+    return {
+        userID: state.firebase.auth.uid
+    }
+}
 
-export default connect(null, actions)(SidebarChat);
+
+export default connect(mapStateToProps, actions)(SidebarChat);

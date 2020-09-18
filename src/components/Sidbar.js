@@ -13,12 +13,16 @@ import * as actions from "../actions";
 
 class Sidbar extends React.Component {
 
+    signout = () => {
+        this.props.logout()
+    }
+
     render() {
         console.log(this.props.rooms)
         return(
             <div className={'sidebar'}>
                 <div className="sidebar-header">
-                    <Avatar />
+                    <Avatar src={this.props.emailIMG} />
                     <div className="sidebar-headerRight">
                         <IconButton>
                             <DonutLargeIcon />
@@ -27,7 +31,7 @@ class Sidbar extends React.Component {
                             <ChatIcon/>
                         </IconButton>
                         <IconButton>
-                            <MoreVertIcon/>
+                            <MoreVertIcon onClick={this.signout}/>
                         </IconButton>
 
                     </div>
@@ -52,8 +56,9 @@ class Sidbar extends React.Component {
 const mapStateToProps = state => {
     console.log(state)
     return {
-        uid: state.firebase.uid,
-        rooms: state.firestore.ordered.rooms
+        uid: state.firebase.auth.uid,
+        rooms: state.firestore.ordered.rooms,
+        emailIMG: state.firebase.auth.photoURL
     }
 }
 
