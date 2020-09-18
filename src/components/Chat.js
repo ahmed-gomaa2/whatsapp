@@ -4,7 +4,7 @@ import {Avatar, IconButton} from "@material-ui/core";
 import {AttachFile, MoreVert, SearchOutlined} from "@material-ui/icons";
 import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon'
 import MicIcon from '@material-ui/icons/Mic'
-import db from '../config/firebase'
+import firebase from '../config/firebase'
 import {useParams} from 'react-router-dom'
 
 const Chat = (props) => {
@@ -16,6 +16,7 @@ const Chat = (props) => {
 
     useEffect(() =>{
         if(roomId) {
+            const db = firebase.firestore()
             db.collection('rooms').doc(roomId).onSnapshot(snapshot => {
                 setRoomName( snapshot.data().name)
             })

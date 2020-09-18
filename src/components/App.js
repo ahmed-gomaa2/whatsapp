@@ -3,10 +3,19 @@ import './css/app.css'
 import Sidbar from "./Sidbar";
 import Chat from "./Chat";
 import {BrowserRouter, Route,} from 'react-router-dom'
+import {connect} from 'react-redux'
+import Login from "./Login";
 
 class App extends Component {
+
+    state = {
+        user: null
+    }
     render() {
-        return (
+        console.log(this.props)
+        return !this.props.uid ? (
+            <Login />
+        ) : (
             <div className={'app'}>
                 <div className="app-body">
                     <BrowserRouter>
@@ -19,4 +28,11 @@ class App extends Component {
     }
 }
 
-export default App;
+const mapStateToProps = state => {
+    return {
+        uid: state.firebase.auth.uid,
+        firebase: state.firebase
+    }
+}
+
+export default connect(mapStateToProps, null) (App);

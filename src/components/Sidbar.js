@@ -6,25 +6,15 @@ import MoreVertIcon from '@material-ui/icons/MoreVert'
 import './css/sidbar.css'
 import {SearchOutlined} from "@material-ui/icons";
 import SidebarChat from "./SidebarChat";
-import db from '../config/firebase'
+import {compose} from "redux";
+import {connect} from "react-redux";
+import {firestoreConnect} from 'react-redux-firebase'
+import * as actions from "../actions";
 
 class Sidbar extends React.Component {
-    state = {
-        rooms: []
-    }
-
-    componentDidMount() {
-        db.collection('rooms').onSnapshot(snapshot => {
-            this.setState({rooms: snapshot.docs.map(doc => (
-                    {
-                        id: doc.id,
-                        data:doc.data()
-                    }
-                ))})
-        })
-    }
 
     render() {
+        console.log(this.props.rooms)
         return(
             <div className={'sidebar'}>
                 <div className="sidebar-header">
@@ -50,8 +40,8 @@ class Sidbar extends React.Component {
                 </div>
                 <div className="sidebar-chats">
                     <SidebarChat addNewChat />
-                    {this.state.rooms.map(room => {
-                        return <SidebarChat id={room.id} key={room.id} name={room.data.name} />
+                    {!this.props.rooms ? '': this.props.rooms.map(room => {
+                        return <SidebarChat id={room.id} key={room.id} name={room.name} />
                     })}
                 </div>
             </div>
@@ -59,4 +49,17 @@ class Sidbar extends React.Component {
     }
 }
 
-export default Sidbar;
+const mapStateToProps = state => {
+    console.log(state)
+    return {
+        uid: state.firebase.uid,
+        rooms: state.firestore.ordered.rooms
+    }
+}
+
+export default compose(
+    connect(mapStateToProps, actions),
+    firestoreConnect(props => [
+        {collection:'rooms'}
+    ])
+) (Sidbar);

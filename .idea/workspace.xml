@@ -27,8 +27,9 @@
       <change beforePath="$PROJECT_DIR$/src/components/Chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Sidbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Sidbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SidebarChat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SidebarChat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/css/sidbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/sidbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/firebase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +79,10 @@
       <updated>1600258062955</updated>
       <workItem from="1600258065033" duration="1625000" />
       <workItem from="1600266941632" duration="16612000" />
-      <workItem from="1600292428406" duration="11994000" />
+      <workItem from="1600292428406" duration="12096000" />
+      <workItem from="1600338685960" duration="186000" />
+      <workItem from="1600356608132" duration="4536000" />
+      <workItem from="1600381926259" duration="11479000" />
     </task>
     <servers />
   </component>
@@ -98,10 +102,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1600273872847">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1600392652526">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600273872847" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600392652526" />
     <state x="93" y="18" key="SettingsEditor" timestamp="1600298214917">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
